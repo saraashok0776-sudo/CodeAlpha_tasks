@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBus Pass - Secure Cloud Booking</title>
+    <link rel="stylesheet" href="CodeAlpha_style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-bus"></i>
+                    <span>SmartBus Pass</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#book" class="nav-link">Book Pass</a>
+                    <a href="#my-tickets" class="nav-link">My Tickets</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Booking Section -->
+    <main>
+        <section id="book" class="booking-section">
+            <div class="container">
+                <h1>Book Your Bus Pass Securely</h1>
+                <p>✅ No ticket loss | 🔒 Theft-proof | 💰 Correct pricing guaranteed</p>
+                
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-group">
+                        <label>From City</label>
+                        <select id="fromCity" required>
+                            <option value="">Select City</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kolkata">Kolkata</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>To City</label>
+                        <select id="toCity" required>
+                            <option value="">Select City</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kolkata">Kolkata</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Pass Type</label>
+                        <select id="passType" required>
+                            <option value="">Select Type</option>
+                            <option value="daily" data-price="50">Daily Pass (₹50)</option>
+                            <option value="weekly" data-price="300">Weekly Pass (₹300)</option>
+                            <option value="monthly" data-price="1000">Monthly Pass (₹1000)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Passenger Name</label>
+                        <input type="text" id="passengerName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="price-display">
+                        <h3>Total: <span id="totalPrice">₹0</span></h3>
+                    </div>
+                    
+                    <button type="submit" class="book-btn">
+                        <i class="fas fa-ticket-alt"></i> Book Pass Now
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Tickets Section -->
+        <section id="my-tickets" class="tickets-section">
+            <div class="container">
+                <h2>My Tickets</h2>
+                <div id="ticketsList" class="tickets-grid">
+                    <!-- Tickets will load here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2>Booking Successful!</h2>
+            <p>Your ticket is now stored securely in the cloud with QR code.</p>
+            <div id="ticketDetails" class="ticket-details"></div>
+            <button id="closeModal" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="CodeAlpha_script.js"></script>
+</body>
+</html>
